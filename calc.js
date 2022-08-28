@@ -2,36 +2,39 @@ function insert(num){
 
   var numero = document.getElementById('resultado').innerHTML;
 
+  //Não deixa ultrapassar 10 digitos para não sair do visor
   if(numero.length <= 10){
 
+    //Não deixa digitar dois operandos seguidos
   if(
     (numero.substr(-1) == '/' || numero.substr(-1) == '+' || 
     numero.substr(-1) == '-'  || numero.substr(-1) == '*') &&
     (num == '/' || num == '+' || num == '-' || num == '*')
    ){
 
+      //Não faz nada
     }
-  else{
+  else{ //Escreve na tela
     document.getElementById('resultado').innerHTML = numero + num;
 }
 }
 
 }
 
-function clean(){
+function clean(){ //limpa tela
 
   document.getElementById('resultado').innerHTML = "";
 }
 
-function calcular(){
+function calcular(){  
 
   var resultado = document.getElementById('resultado').innerHTML;
 
-  if(resultado){
+  if(resultado){  //eval = faz o calculo
 
     document.getElementById('resultado').innerHTML = eval(resultado);
   }
-  else{
+  else{ //Não mostra nada
 
     document.getElementById('resultado').innerHTML = "";
 
@@ -39,13 +42,15 @@ function calcular(){
 
 }
 
+//Esquema das bandeiras
+
 let br = document.querySelector('#brasil');
 let arg = document.querySelector('#argentina');
 let hol = document.querySelector('#holanda');
 let port = document.querySelector('#portugal');
 
 
-br.addEventListener('click', () =>{
+br.addEventListener('click', () =>{ //ao clicar...muda as cores do fundo,calculadora e botoes
 
   document.body.style.backgroundImage = "linear-gradient(90deg,green,greenyellow,yellow,blue)";
   const collection = document.getElementsByClassName("numero");
