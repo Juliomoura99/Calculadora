@@ -41,6 +41,10 @@ body{
    text-align: right;
 }
 
+p{
+   overflow: hidden;
+}
+
 .op{
    background-color: yellow;
    color: black;
